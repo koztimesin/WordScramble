@@ -54,6 +54,11 @@ class ViewController: UITableViewController {
             self?.submit(answer)
         }
         ac.addAction(submitAction)
+        present(ac, animated: true)
+    }
+    
+    func submit(_ answer: String)
+    {
     }
 }
 
