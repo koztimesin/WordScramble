@@ -59,13 +59,13 @@ class ViewController: UITableViewController {
     }
     
     func submit(_ answer: String) {
-        let lowerAnswer = answer.lowercased()
+        let lowerAnswer = answer.trimmingCharacters(in: .whitespaces).lowercased()
                 
         if lowerAnswer.count == 0 { return }
         if isPossible(word: lowerAnswer) {
             if isOriginal(word: lowerAnswer) {
                 if isReal(word: lowerAnswer) {
-                    usedWords.insert(answer, at: 0)
+                    usedWords.insert(answer.trimmingCharacters(in: .whitespaces), at: 0)
                     
                     let indexPath = IndexPath(row: 0, section: 0)
                     tableView.insertRows(at: [indexPath], with: .automatic)
