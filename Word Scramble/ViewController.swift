@@ -61,7 +61,7 @@ class ViewController: UITableViewController {
     func submit(_ answer: String) {
         let lowerAnswer = answer.trimmingCharacters(in: .whitespaces).lowercased()
                 
-        if lowerAnswer.count == 0 { return }
+        if lowerAnswer.isEmpty { return }
         if isPossible(word: lowerAnswer) {
             if isOriginal(word: lowerAnswer) {
                 if isReal(word: lowerAnswer) {
